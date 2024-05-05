@@ -8,17 +8,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Date;
+import java.util.UUID;
 
 @SpringBootApplication
 public class MessagingRabbitmqApplication {
 
 	static final String fanoutExchangeName = "spring-boot-exchange";
 
-	static final String queueName = "spring-boot"+new Date();
+	static final String queueName = "spring-boot"+ UUID.randomUUID();;
 
 	@Bean
 	Queue queue() {
